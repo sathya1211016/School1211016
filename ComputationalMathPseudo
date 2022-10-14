@@ -1,0 +1,134 @@
+
+
+Content
+
+Forward difference
+Backward difference
+Newton ralphson method
+
+
+
+Common
+Get input n (degree,coefficent, variable)
+Arithmetic operation
+Get input 1 (degree,coefficent, Optional variable)
+Arithmetic operation
+Constant
+=
+0
+
+
+
+Forward difference
+
+F(x)= (F'(x+h)-F(x))/F(x)
+
+F'(x+h)=?
+
+
+
+
+Newtonralphson method
+
+
+x(n+1) = x(n)-(F(x)/F'(x))
+
+F(x) = x^3-x^2+2
+F'(x)=3x^2-2x
+using namespace
+Class
+static double Middle = 0.001;
+static double Functi(double x)
+{
+    return x*x*x-(x*x)+2;
+}
+static double DeriveFuncti(double x)
+{
+    return 3(x*x)-2*x;
+}
+static void Newtonralphson(double x)
+{
+    double h = Functi(x)/DeriveFuncti(x);
+    while(Math.Abs(h)>=Middle)
+    {
+        h = Functi(x)/DeriveFuncti(x);
+        x = x-h;
+    }
+    print("The root is : {0}",Math.Round((x*100)/100);
+}
+
+public static void Main()
+{
+    double x0 = -20;
+    Newtonralphson(x0);
+}
+
+
+Bisection method (Binary/dichotomy/halving method)
+Assumptions:
+F(x) is a continuous function in interval [a,b] algebric/transcendal equation
+F(a)*F(b)<0 based on intermediate value theorem
+static float Middle = (float)0.01
+static double Functi(double x)
+{
+    return x*x*x-2*x*x+2;
+}
+static void Bisect(double a,double b)
+{
+    if(Functi(a)*Functi(b)>=0)
+    {
+        return "You have not assumed right a and b";
+    }
+    double c= a;
+    while((b-a)>=Middle)
+    {
+        c = (a+b)/2;
+        if Functi(c)==0.0
+        break;
+        else if (Functi(c)*Functi(a)>=0)
+        b=c;
+        else
+        a=c;
+    }
+    print("The value of c is:",c);
+}
+public static void Main()
+{
+    double a=-200, b=200;
+    Bisect(a,b);
+}
+
+Method of flase position
+
+static int NO_of_Iteration = 1000;
+static double Functi(double x)
+{
+    return x*x*x-2*x*x+2;
+}
+static void RegulaFlasi(double a, double b)
+{
+    if(Functi(a)*Functi(b)>=0)
+    {
+        return "You have not assumed right a and b";
+    }
+    double c= a;
+    for(int i=0;i<=NO_of_Iteration;i++)
+    {
+        c=((a*Functi(b))-(b*Functi(a))/(Functi(b)-Functi(a)));
+        if Functi(c)==0.0
+        break;
+        else if (Functi(c)*Functi(a)>=0)
+        b=c;
+        else
+        a=c;
+    }
+        print("The value of c is:",c);
+}
+public static void Main()
+{
+    double a=-200, b=200;
+    RegulaFlasi(a,b);
+}
+
+
+
